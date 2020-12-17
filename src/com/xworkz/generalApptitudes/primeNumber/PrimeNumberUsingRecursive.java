@@ -2,6 +2,14 @@ package com.xworkz.generalApptitudes.primeNumber;
 
 import java.util.Scanner;
 
+
+
+/**
+ * Purpose : PrimeNumberUsingRecursive
+ * 
+ * @author Nikunj Balar
+ *
+ */
 public class PrimeNumberUsingRecursive {
 
 	public static void main(String[] args) {
@@ -11,14 +19,28 @@ public class PrimeNumberUsingRecursive {
 		System.out.println("Enter the number ");
 		int number = scanner.nextInt();
 		System.out.println(number);
-
-		PrimeNumberUsingRecursive recursive = new PrimeNumberUsingRecursive();
-		recursive.primeNumber(number);
+		boolean prime = false;
+		if(number > 1) {
+			prime =primeNumber(number, 2);
+			if (prime == false) {
+				System.out.println("Number not prime");
+			} else {
+				System.out.println("Number is prime");
+			}
+		}
+		else 
+			System.out.println("plz add number that is graterthen 1");
+		
 	}
 
-	boolean primeNumber(int number) {
-
-		return false;
+	static boolean primeNumber(int number, int i) {
+		if (number > i) {
+			if (number % i == 0) {
+				return false;
+			} else {
+				return primeNumber(number, ++i);
+			}
+		}
+		return true;
 	}
-
 }

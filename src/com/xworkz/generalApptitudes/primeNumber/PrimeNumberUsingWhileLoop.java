@@ -5,10 +5,10 @@ public class PrimeNumberUsingWhileLoop {
 	public static void main(String[] args) {
 
 		int i = 2;
-		int number = 151;
+		int number = 4;
 		int count = 0;
 
-		while (i < number/2) {
+		while (i <= number/2) {
 			if (number % i == 0) {
 				count++;
 				break;
